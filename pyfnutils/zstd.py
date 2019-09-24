@@ -23,10 +23,10 @@ def open(filename, mode='rb'):
         File object
     """
     if mode == 'r' or mode == 'rb':
-        p = subprocess.Popen(['zstd', '-d', '-c', filename], stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+        p = subprocess.Popen(['zstd', '-d', '-f', '-c', filename], stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
         return p.stdout
     elif mode == 'rt':
-        p = subprocess.Popen(['zstd', '-d', '-c', filename], stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, universal_newlines=True)
+        p = subprocess.Popen(['zstd', '-d', '-f', '-c', filename], stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, universal_newlines=True)
         return p.stdout
     elif mode == 'w' or mode == 'wb':
         assert not os.path.exists(filename), 'File already exists: %s'%filename
