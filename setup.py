@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='pyfnutils',
-    version='1.0',
+    version='1.1',
     packages=['pyfnutils'],
     author='Charles E. Vejnar',
     url='https://gitlab.com/vejnar/pyfnutils',
