@@ -29,11 +29,11 @@ def open(filename, mode='rb'):
         p = subprocess.Popen(['zstd', '-d', '-f', '-c', filename], stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, universal_newlines=True)
         return p.stdout
     elif mode == 'w' or mode == 'wb':
-        assert not os.path.exists(filename), 'File already exists: %s'%filename
+        assert not os.path.exists(filename), f'File already exists: {filename}'
         p = subprocess.Popen(['zstd', '-', '-o', filename], stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         return p.stdin
     elif mode == 'wt':
-        assert not os.path.exists(filename), 'File already exists: %s'%filename
+        assert not os.path.exists(filename), f'File already exists: {filename}'
         p = subprocess.Popen(['zstd', '-', '-o', filename], stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, universal_newlines=True)
         return p.stdin
     else:
