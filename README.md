@@ -20,4 +20,4 @@ pip3 install pyfnutils
 
 *pyfnutils* is distributed under the Mozilla Public License Version 2.0 (see /LICENSE).
 
-Copyright (C) 2011-2022 Charles E. Vejnar
+Copyright © 2011-2023 Charles E. Vejnar
