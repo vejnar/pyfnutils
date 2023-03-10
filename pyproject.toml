@@ -1,3 +1,17 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61", "setuptools_scm", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyfnutils"
+authors = [{name = "Charles E. Vejnar"}]
+description = "Small utility functions for Python: logging, parallel tasks, zstd"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Mozilla Public License 2.0 (MPL 2.0)"}
+dynamic = ["version"]
+
+[project.urls]
+homepage = "https://git.sr.ht/~vejnar/pyfnutils"
+
+[tool.setuptools_scm]
