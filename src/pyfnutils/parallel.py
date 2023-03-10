@@ -27,7 +27,7 @@ def run(fn, jobs, num_processor=1, return_when=concurrent.futures.FIRST_EXCEPTIO
         # Add jobs to queue
         fs = []
         for job in jobs:
-            if isinstance(job, list):
+            if isinstance(job, list) or isinstance(job, tuple):
                 fs.append(executor.submit(fn, *job))
             elif isinstance(job, dict):
                 fs.append(executor.submit(fn, **job))
